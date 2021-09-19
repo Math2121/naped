@@ -1,0 +1,10 @@
+a{
+    font-family: "Inter",sans-serif;
+    color: $gray-light;
+    font-size: 16px;
+    transition: .3s ease;
+  
+    &:hover{
+        color: $white;
+    }
+}

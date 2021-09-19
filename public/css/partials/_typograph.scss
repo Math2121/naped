@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Lexend+Deca:wght@200;300;400&display=swap');
+
+@mixin typeface-title($size,$device:desktop){
+    font-family:"Lexend Deca",sans-serif;
+    @if size == h1 and $device == desktop {
+        font-size: 48px;
+
+    }
+    @else if size == h1 and $device == mobile {
+        font-size: 40px;
+    }
+
+    @if size == h2 and $device == desktop {
+        font-size: 24px;
+
+    }
+    @else if size == h2 and $device == mobile {
+        font-size: 20px;
+    }
+
+
+    @if size == h3 and $device == desktop {
+        font-size: 16px;
+
+    }
+    @if size == h4 and $device == desktop {
+        font-size: 12px;
+
+    }
+   
+
+}
+
+@mixin typeface-text($size, $device:desktop) {
+    font-family: "Inter",sans-serif;
+
+    @if $size == p1 and $device == desktop {
+        font-size: 16px;
+    }
+    @else if $size == p1 and $device == mobile{
+        font-size: 14px;
+    }
+    @if $size == p2 and $device == desktop {
+        font-size: 14px;
+    }
+    @else if $size == p2 and $device == mobile{
+        font-size: 12px;
+    }
+
+}
+
+
+h1 {
+    color: $white;
+    @include typeface-title(h1, desktop);
+  
+    @include responsive(s) {
+      @include typeface-title(h1, mobile);
+    }
+  
+  }
+  
+  h2 {
+    color: $black-normal;
+    @include typeface-title(h2, desktop);
+  
+    @include responsive(s) {
+      @include typeface-title(h2, mobile);
+    }
+  
+  }
+  
+  h3 {
+    color: $black-normal;
+    @include typeface-title(h3, desktop);
+  
+    @include responsive(s) {
+      @include typeface-title(h3, mobile);
+    }
+  
+  }
+  
+  p{
+    color:$gray-light;
+    @include typeface-text(p1, desktop);
+  
+    @include responsive(s) {
+      @include typeface-text(p1, mobile);
+    }
+  }
+  span{
+    @include typeface-text(p2, desktop);
+  
+    @include responsive(s) {
+      @include typeface-text(p2, mobile);
+    } 
+  }
